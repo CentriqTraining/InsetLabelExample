@@ -1,0 +1,66 @@
+﻿
+html {
+    font: 14px/1.4 Sans-Serif;
+}
+
+.no-label-form {
+    width: 320px;
+}
+
+    /* This div must be position relative
+    To start we'll place the label OUTSIDE of the div....so we want it to not show (overflow: hidden)
+    Also put a space between each textbox
+*/
+    .no-label-form > div {
+        position: relative;
+        overflow: hidden;
+        margin: 8px;
+    }
+
+
+    /*  Set the color of the border when it has focus.
+        The label needs to be set this color too!
+    */
+    .no-label-form input:focus,
+    .no-label-form textarea:focus {
+        border-color: #f06d06;
+    }
+
+    /* Size and arrange the textboxes and textareas */
+    .no-label-form input,
+    .no-label-form textarea {
+        width: 90%;
+        border: 2px solid #0094ff;
+        background: none;
+        position: relative;
+        border-radius: 5px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        margin-right: 18px;
+        padding: 8px 8px 16px 8px;
+        outline: 0;
+        box-shadow: 3px 3px rgb(203, 199, 199);
+    }
+
+    .no-label-form label {
+        position: absolute;
+        bottom: -20px; /*  Hide well below parent div tag */
+        background: #f06d06; /* This set the color of the label below */
+        transition: bottom .5s;
+        color: white;
+        font-size: 70%;
+        border-radius: 0 0 5px 5px; /*  Round the bottom edges */
+        padding: 1px 8px; /* Get the text away from the left edge */
+        left: 1px;
+        height: 14px;
+        width: 91%;
+        text-transform: uppercase;
+    }
+
+
+    .no-label-form input:focus + label,
+    .no-label-form textarea:focus + label {
+        bottom: 0; /* The input is in focus...move the bottom up to zero. */
+        z-index: 2;
+    }
